@@ -22,11 +22,9 @@ int buscarEnTexto(const string &texto, const string &palabra, int &comparaciones
     }
     return apariciones;
 }
-
-// --- Método 2: Búsqueda binaria en una lista ORDENADA de palabras ---
-// Solo sirve para saber si la palabra EXISTE en la lista (no cuenta repeticiones dentro de un texto)
+// Metodo 2: Búsqueda binaria en una lista ORDENADA de palabras
 bool buscarEnListaOrdenada(vector<string> lista, const string &palabra, int &comparaciones) {
-    sort(lista.begin(), lista.end());   // primero se ordena (requisito de la búsqueda binaria)
+    sort(lista.begin(), lista.end());   // primero se ordena
     comparaciones = 0;
     int inicio = 0, fin = lista.size() - 1;
 
@@ -44,13 +42,12 @@ int main() {
     string texto = "el perro corre y el gato duerme y el perro ladra";
     string palabra = "perro";
 
-    // --- Método 1: buscar la palabra dentro del texto completo ---
+    // Metodo 1: buscar la palabra dentro del texto completo
     int comp1;
     int veces = buscarEnTexto(texto, palabra, comp1);
     cout << "Busqueda en texto:\n";
     cout << "  La palabra \"" << palabra << "\" aparece " << veces << " veces.\n";
     cout << "  Comparaciones realizadas: " << comp1 << "\n\n";
-
     //Metodo 2: separar el texto en palabras y buscar en la lista 
     vector<string> listaPalabras;
     stringstream ss(texto);
