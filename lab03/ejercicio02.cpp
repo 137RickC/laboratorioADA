@@ -107,11 +107,15 @@ int main() {
     for (float x : fijo) {
         cout << x << " ";
     }
-    cout << endl;
+    for(int n : fijo){
+        cout << n << " ";
+    }
 
     cout << "Pivote aleatorio: "
          << tiempoAleatorio
          << " microsegundos\n";
-    cout << aleatorio << endl;
+    for(int n : aleatorio){
+        cout << n << " ";
+    }
     return 0;
 }
