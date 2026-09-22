@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-float partition(float arr[], int low, int high)
-{
+float partition(float arr[], int low, int high){
     float pivote = arr[high];
     int i = low - 1;
     for (int j = low; j <= high - 1; j++)
@@ -15,8 +14,7 @@ float partition(float arr[], int low, int high)
     swap(arr[i + 1], arr[high]);
     return i + 1;
 }
-void quickSort(float arr[], float low, float high)
-{
+void quickSort(float arr[], float low, float high){
     if (low < high)
     {
         float pi = partition(arr, low, high);
@@ -24,8 +22,7 @@ void quickSort(float arr[], float low, float high)
         quickSort(arr, pi + 1, high);
     }
 }
-int main()
-{
+int main(){
     float arr[] = {38, 27, 43, 3, 9, 82, 10};
     float n = sizeof(arr) / sizeof(arr[0]);
     quickSort(arr, 0, n - 1);

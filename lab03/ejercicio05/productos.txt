@@ -1,0 +1,6 @@
+P001;Laptop Gamer;3599.90
+P002;Mouse Logitech;120.50
+P003;Monitor Samsung;950.00
+P004;Teclado Mecanico;280.90
+P005;SSD Kingston 1TB;350.00
+P006;Audifonos HyperX;320.50
