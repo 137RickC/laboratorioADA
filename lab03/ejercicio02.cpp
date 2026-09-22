@@ -103,19 +103,9 @@ int main() {
     cout << "Pivote fijo: "
          << tiempoFijo
          << " microsegundos\n";
-    cout << "Pivote fijo: ";
-    for (float x : fijo) {
-        cout << x << " ";
-    }
-    for(int n : fijo){
-        cout << n << " ";
-    }
 
-    cout << "Pivote aleatorio: "
+    cout << "\nPivote aleatorio: "
          << tiempoAleatorio
          << " microsegundos\n";
-    for(int n : aleatorio){
-        cout << n << " ";
-    }
     return 0;
 }

@@ -2,21 +2,16 @@
 #include <vector>
 #include <random>
 #include <chrono>
-
 using namespace std;
 using namespace chrono;
-
-// ---------------- MERGESORT ----------------
-
+// MERGESORT 
 void merge(vector<int>& arr, int izq, int medio, int der) {
-
     vector<int> aux;
 
     int i = izq;
     int j = medio + 1;
 
     while (i <= medio && j <= der) {
-
         if (arr[i] <= arr[j]) {
             aux.push_back(arr[i]);
             i++;
@@ -40,11 +35,8 @@ void merge(vector<int>& arr, int izq, int medio, int der) {
         arr[izq + k] = aux[k];
     }
 }
-
 void mergeSort(vector<int>& arr, int izq, int der) {
-
     if (izq < der) {
-
         int medio = izq + (der - izq) / 2;
 
         mergeSort(arr, izq, medio);
@@ -54,7 +46,7 @@ void mergeSort(vector<int>& arr, int izq, int der) {
     }
 }
 
-// ---------------- BUSQUEDA BINARIA ----------------
+// BUSQUEDA BINARIA 
 
 int busquedaBinaria(const vector<int>& arr, int buscado) {
 
@@ -77,7 +69,7 @@ int busquedaBinaria(const vector<int>& arr, int buscado) {
     return -1;
 }
 
-// ---------------- BUSQUEDA SECUENCIAL ----------------
+//  BUSQUEDA SECUENCIAL
 
 int busquedaSecuencial(const vector<int>& arr, int buscado) {
 
@@ -112,7 +104,7 @@ int main() {
     cout << "Numero a buscar: ";
     cin >> buscado;
 
-    // ---------------- SECUENCIAL ----------------
+    //SECUENCIAL
 
     auto inicioSec = high_resolution_clock::now();
 
@@ -120,7 +112,7 @@ int main() {
 
     auto finSec = high_resolution_clock::now();
 
-    // ---------------- ORDENAMIENTO ----------------
+    // ORDENAMIENTO
 
     vector<int> ordenado = original;
 
@@ -130,7 +122,7 @@ int main() {
 
     auto finOrd = high_resolution_clock::now();
 
-    // ---------------- BINARIA ----------------
+    // BINARIA 
 
     auto inicioBin = high_resolution_clock::now();
 
@@ -160,16 +152,6 @@ int main() {
 
     cout << "Tiempo ordenamiento + busqueda binaria: "
          << tiempoOrd + tiempoBin << " ns\n";
-
-    cout << "\nComplejidades teoricas:\n";
-
-    cout << "Busqueda secuencial: O(n)\n";
-
-    cout << "Mergesort: O(n log n)\n";
-
-    cout << "Busqueda binaria: O(log n)\n";
-
-    cout << "Total: O(n log n + log n) = O(n log n)\n";
 
     return 0;
 }
