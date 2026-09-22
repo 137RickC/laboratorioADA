@@ -4,58 +4,43 @@
 #include <vector>
 #include <string>
 #include <iomanip>
-
 using namespace std;
 
 struct Producto {
-
     string codigo;
     string nombre;
     float precio;
 };
-
-// =====================================================
 // MERGESORT
-// =====================================================
-
 void merge(vector<Producto>& productos,
            int izq,
            int medio,
            int der) {
 
     vector<Producto> aux;
-
     int i = izq;
     int j = medio + 1;
 
     while (i <= medio && j <= der) {
-
         // Mayor precio primero
-
         if (productos[i].precio >= productos[j].precio) {
-
             aux.push_back(productos[i]);
             i++;
 
         } else {
-
             aux.push_back(productos[j]);
             j++;
         }
     }
 
     while (i <= medio) {
-
         aux.push_back(productos[i]);
         i++;
     }
-
     while (j <= der) {
-
         aux.push_back(productos[j]);
         j++;
     }
-
     for (int k = 0; k < aux.size(); k++) {
 
         productos[izq + k] = aux[k];
@@ -71,39 +56,26 @@ void mergeSort(vector<Producto>& productos,
         int medio = izq + (der - izq) / 2;
 
         mergeSort(productos, izq, medio);
-
         mergeSort(productos, medio + 1, der);
-
         merge(productos, izq, medio, der);
     }
 }
-
-// =====================================================
 // QUICKSORT
-// =====================================================
-
 int particion(vector<Producto>& productos,
               int low,
               int high) {
 
     float pivote = productos[high].precio;
-
     int i = low - 1;
 
     for (int j = low; j < high; j++) {
-
         // Mayor precio primero
-
         if (productos[j].precio > pivote) {
-
             i++;
-
             swap(productos[i], productos[j]);
         }
     }
-
     swap(productos[i + 1], productos[high]);
-
     return i + 1;
 }
 
@@ -112,18 +84,14 @@ void quickSort(vector<Producto>& productos,
                int high) {
 
     if (low < high) {
-
         int p = particion(productos, low, high);
 
         quickSort(productos, low, p - 1);
-
         quickSort(productos, p + 1, high);
     }
 }
 
-// =====================================================
 // MOSTRAR
-// =====================================================
 
 void mostrar(const vector<Producto>& productos) {
 
@@ -143,10 +111,6 @@ void mostrar(const vector<Producto>& productos) {
              << endl;
     }
 }
-
-// =====================================================
-// MAIN
-// =====================================================
 
 int main() {
 
@@ -209,11 +173,11 @@ int main() {
         );
     }
 
-    cout << "\n===== MERGESORT =====\n";
+    cout << "\nMERGESORT\n";
 
     mostrar(mergeProductos);
 
-    cout << "\n===== QUICKSORT =====\n";
+    cout << "\nQUICKSORT\n";
 
     mostrar(quickProductos);
 
