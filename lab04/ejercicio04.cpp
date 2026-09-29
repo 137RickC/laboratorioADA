@@ -100,14 +100,12 @@ void generarGrafo(int n,vector<vector<pair<int, int>>>& grafo,
         }
     }
 }
-
 int main() {
     int tamanos[] = {
         10,
         100,
         500
     };
-
     for (int n : tamanos) {
         vector<vector<pair<int, int>>> grafo;
         vector<vector<int>> matriz;
@@ -130,12 +128,8 @@ int main() {
 
         double tiempoF = duration<double, milli>(finF - inicioF).count();
         cout << "\nVertices: " << n << endl;
-
         cout << "Dijkstra: " << tiempoD << " ms" << endl;
-
         cout << "Floyd-Warshall: " << tiempoF << " ms" << endl;
-
-        cout << "------------------------\n";
     }
 
     return 0;

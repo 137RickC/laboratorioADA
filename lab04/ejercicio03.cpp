@@ -3,7 +3,6 @@
 #include <queue>
 #include <climits>
 #include <algorithm>
-
 using namespace std;
 
 void mostrarRuta(int destino, const vector<int>& predecesor,
